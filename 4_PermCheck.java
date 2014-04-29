@@ -1,11 +1,17 @@
-
 class Solution {
     public int solution(int[] A) {
         
         int sum = 0;
-        int result;
+        int result, max = Integer.MIN_VALUE;
         long n = A.length*(A.length+1)/2;
-        int[] B = new int[A.length + 1];
+        
+        for(int i = 0; i < A.length; i++) {
+            if(A[i] > max) {
+                max = A[i];
+            }
+        }
+        
+        int[] B = new int[max];
         
         for(int i = 0; i < A.length; i++) {
             B[A[i]-1]++;
