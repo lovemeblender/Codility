@@ -6,13 +6,16 @@ class Solution {
         for(int i = 0; i < A.length; i++) {
             
             if(A[i] > N) {
-                // increase all to max
+                // set all to max
                 for(int j = 0; j < N; j++) {
                     B[j] = max;
                 }
             }
             else {
-                max = ++B[A[i] - 1];
+                int newMax = ++B[A[i] - 1];
+                if(newMax > max) {
+                    max = newMax;
+                }
             }
             
         }
