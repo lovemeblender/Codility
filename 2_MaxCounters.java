@@ -1,32 +1,35 @@
 class Solution {
     public int[] solution(int N, int[] A) {
         int[] B = new int[N];
-        int lMax = 0, max = 0;
-        
-        for(int i = 0; i < A.length; i++) {
+        int max = 0, lastMax = 0;
+    
+        for(int i=0; i<A.length; i++) {
+            int a = A[i] - 1;
             
+            // max_counter
             if(A[i] > N) {
-                lMax = max;
+                lastMax = max;
             }
             else {
-                if(B[A[i] - 1] < lMax) {
-                    B[A[i] - 1] = lMax + 1;
+                if(B[a] < lastMax) {
+                    B[a] = lastMax + 1;
+                } 
+                // increase(X)
+                else {                
+                    B[a]++;
                 }
-                
-                int newMax = ++B[A[i] - 1];
-                if(newMax > max) {
-                    max = newMax;
+                // if a new max occured  
+                if(B[a] > max) {
+                    max = B[a];
                 }
-                
-            }
+            } 
         }
         
-        for(int j = 0; j < N; j++) {
-            if(B[j] < lMax) {
-                B[j] = lMax;
+        for(int j = 0; j < B.length; j++) {
+            if(B[j] < lastMax) {
+               B[j] = lastMax;
             }
         }
-        
         return B;
     }
 }
