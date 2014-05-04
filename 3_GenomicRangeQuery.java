@@ -20,7 +20,7 @@ class Solution {
         // sum prefixes O(N) time  O(N) space
         for(int j = 0; j < 4; j++) {
             for(int i = 0; i < N-1; i++) {
-                pref[i+1][j] += pref[i][j]
+                pref[i+1][j] += pref[i][j];
             }
         }
         
@@ -34,7 +34,6 @@ class Solution {
                 result[j] = i + 1;
             }
         }
-        
-        
+        return result;
     }
 }
