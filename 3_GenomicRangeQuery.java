@@ -18,7 +18,7 @@ class Solution {
         // sum prefixes O(N) time  O(N) space
         for(int j = 0; j < 4; j++) {
             for(int i = 0; i < N-1; i++) {
-                pref[i+1][j] += pref[i][j];
+                pref[i + 1][j] += pref[i][j];
             }
         }
         
@@ -28,20 +28,12 @@ class Solution {
             int to = Q[j];
             // each nucleotide
             for(int i = 0; i < 4; i++) {
+                int sub = 0;
                 
-                if(to == from) {
-                    if(to == 0) {
-                        if(pref[to][i] != 0) {
-                            result[j] = i + 1;
-                            break;
-                        }
-                    }
-                    else if(pref[to - 1][i] == 0) {
-                        result[j] = i + 1;
-                        break;
-                    }
+                if(from - 1 >= 0) { 
+                    sub = pref[from - 1][i];
                 }
-                if( pref[to][i] - pref[from][i] != 0 ) {
+                if(pref[to][i] - sub != 0) {
                     result[j] = i + 1;
                     break;
                 }
