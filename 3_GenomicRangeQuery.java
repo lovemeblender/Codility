@@ -1,5 +1,3 @@
-// Inspired from http://rafal.io/posts/codility-genomic-range-query.html
-
 class Solution {
     public int[] solution(String S, int[] P, int[] Q) {
         
@@ -32,7 +30,13 @@ class Solution {
             for(int i = 0; i < 4; i++) {
                 
                 if(to == from) {
-                    if(pref[to - 1][i] == 0) {
+                    if(to == 0) {
+                        if(pref[to][i] != 0) {
+                            result[j] = i + 1;
+                            break;
+                        }
+                    }
+                    else if(pref[to - 1][i] == 0) {
                         result[j] = i + 1;
                         break;
                     }
