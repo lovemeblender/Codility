@@ -1,3 +1,4 @@
+// Inspired from http://rafal.io/posts/codility-genomic-range-query.html
 
 class Solution {
     public int[] solution(String S, int[] P, int[] Q) {
