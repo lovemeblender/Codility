@@ -30,8 +30,17 @@ class Solution {
             int to = Q[j];
             // each nucleotide
             for(int i = 0; i < 4; i++) {
-                if( pref[from][i] - pref[from][i] != 0 )
-                result[j] = i + 1;
+                
+                if(to == from) {
+                    if(pref[to - 1][i] == 0) {
+                        result[j] = i + 1;
+                        break;
+                    }
+                }
+                if( pref[to][i] - pref[from][i] != 0 ) {
+                    result[j] = i + 1;
+                    break;
+                }
             }
         }
         return result;
