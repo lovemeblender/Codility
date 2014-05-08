@@ -9,18 +9,22 @@ class Solution {
         if(S.equals("")) return 1;
         
         for(int i = 0; i < S.length(); i++) {
-            st.push(S.charAt(i));
-        }
-        
-        for(int i = 0; i < S.length(); i++) {
-            Character a = S.charAt(i);
-            Character b = st.pop();
             
-            if(a.equals('{') & !b.equals('}')) return 0;
-            else if(a.equals('[') & !b.equals(']')) return 0;
-            else if(a.equals('(') & !b.equals(')')) return 0;
+            Character a = S.charAt(i);
+            
+            if(a.equals('(') | a.equals('[') | a.equals('{') ) {
+                st.push(S.charAt(i));
+            }
+            else {
+                if(st.isEmpty()) return 0;
+                Character b = st.pop();
+                
+                if(a.equals(')') & !b.equals('(')) return 0;
+                if(a.equals(']') & !b.equals('[')) return 0;
+                if(a.equals('}') & !b.equals('{')) return 0;
+            }
         }
     
-        return 1;
+        return st.isEmpty() ? 1 : 0;
     }
 }
