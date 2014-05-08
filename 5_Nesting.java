@@ -3,7 +3,6 @@ import java.util.Stack;
 class Solution {
     public int solution(String S) {
         
-        if(S.length() % 2 != 0) return 0;
         Stack<Character> st = new Stack<Character>();
         
         for(int i = 0; i < S.length(); i++) {
