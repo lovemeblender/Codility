@@ -14,9 +14,7 @@ class Solution {
             }
             else {
                 if(st.isEmpty()) return 0;
-                Character b = st.pop();
-                
-                if(a.equals(')') & !b.equals('(')) return 0;
+                st.pop();
             }
         }
         return st.isEmpty() ? 1 : 0;
