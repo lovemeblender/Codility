@@ -5,9 +5,6 @@ class Solution {
         int result;
         Stack<Character> st = new Stack<Character>();
         
-        // S is empty
-        if(S.equals("")) return 1;
-        
         for(int i = 0; i < S.length(); i++) {
             
             Character a = S.charAt(i);
