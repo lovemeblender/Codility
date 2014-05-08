@@ -3,7 +3,7 @@ class Solution {
         int[] B = new int[N];
         int max = 0, lastMax = 0;
     
-        for(int i=0; i<A.length; i++) {
+        for(int i = 0; i < A.length; i++) {
             int a = A[i] - 1;
             
             // max_counter
