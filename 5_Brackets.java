@@ -10,7 +10,7 @@ class Solution {
             Character a = S.charAt(i);
             
             if(a.equals('(') | a.equals('[') | a.equals('{') ) {
-                st.push(S.charAt(i));
+                st.push(a);
             }
             else {
                 if(st.isEmpty()) return 0;
